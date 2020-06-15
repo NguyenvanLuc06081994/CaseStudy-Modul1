@@ -18,8 +18,12 @@ function addPlayer() {
     let country = document.getElementById("player-country").value;
     let img = document.getElementById("player-img").value;
     let player = new Player(img, name, age, position, country, price);
-    club.addProduct(player);
-    display(club.getHtml());
+    if (name === '' || age === '' || img === '' || position === '' || country === '' || price === '') {
+        alert("Please! Fill Full Information.");
+    } else {
+        club.addProduct(player);
+        display(club.getHtml());
+    }
     document.getElementById('form-add').reset();
 }
 
@@ -30,6 +34,7 @@ function saveData() {
 function loadData() {
     return localStorage.hasOwnProperty(PLAYER) ? JSON.parse(localStorage.getItem(PLAYER)) : [];
 }
+
 function edit(index) {
     document.getElementById('form-edit').style.display = "inline-block";
     let player = club.getProductByIndex(index);
@@ -41,6 +46,7 @@ function edit(index) {
     document.getElementById('edit-img').value = player.img;
     currentPlayer = index;
 }
+
 function editPlayer() {
     let name = document.getElementById("edit-name").value;
     let price = document.getElementById("edit-price").value;
@@ -48,11 +54,12 @@ function editPlayer() {
     let position = document.getElementById("edit-position").value;
     let country = document.getElementById("edit-country").value;
     let img = document.getElementById("edit-img").value;
-    club.players[currentPlayer].edit(img,name,age,position,country,price);
+    club.players[currentPlayer].edit(img, name, age, position, country, price);
     display(club.getHtml());
     document.getElementById('form-edit').reset();
     document.getElementById('form-edit').style.display = "none";
 }
+
 function del(index) {
     club.deletePlayer(index);
     display(club.getHtml());
