@@ -30,3 +30,26 @@ function saveData() {
 function loadData() {
     return localStorage.hasOwnProperty(PLAYER) ? JSON.parse(localStorage.getItem(PLAYER)) : [];
 }
+function edit(index) {
+    document.getElementById('form-edit').style.display = "inline-block";
+    let player = club.getProductByIndex(index);
+    document.getElementById('edit-name').value = player.name;
+    document.getElementById('edit-price').value = player.price;
+    document.getElementById('edit-age').value = player.age;
+    document.getElementById('edit-position').value = player.position;
+    document.getElementById('edit-country').value = player.country;
+    document.getElementById('edit-img').value = player.img;
+    currentPlayer = index;
+}
+function editPlayer() {
+    let name = document.getElementById("edit-name").value;
+    let price = document.getElementById("edit-price").value;
+    let age = document.getElementById("edit-age").value;
+    let position = document.getElementById("edit-position").value;
+    let country = document.getElementById("edit-country").value;
+    let img = document.getElementById("edit-img").value;
+    club.players[currentPlayer].edit(img,name,age,position,country,price);
+    display(club.getHtml());
+    document.getElementById('form-edit').reset();
+    document.getElementById('form-edit').style.display = "none";
+}
