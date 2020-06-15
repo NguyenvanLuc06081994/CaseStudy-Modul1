@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+    <script src="My-JSS/data.js"></script>
+    <script src="My-JSS/Player.js"></script>
+    <script src="My-JSS/PlayerManager.js"></script>
+</head>
+<body>
+<div id="screen">
+
+</div>
+<script>
+    let club = new PlayerManager('Nam Dinh');
+    club.data = loadData();
+    club.init();
+    display(club.getHTmlUser());
+
+    function display(table) {
+        document.getElementById('screen').innerHTML = table;
+    }
+</script>
+</body>
+</html>

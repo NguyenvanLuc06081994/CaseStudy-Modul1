@@ -74,4 +74,15 @@ class Player {
                     <td>${this.price}</td>`;
         return html;
     }
+
+    getHtmlView() {
+        let html = `<div>
+                      <<img src="${this.img}" alt="">
+                      <div>
+                        <p>${this.name}</p>
+                        <p>${this.age}</p>
+                      </div>
+                  </div>`;
+        return html;
+    }
 }

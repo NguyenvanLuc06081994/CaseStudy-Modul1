@@ -1,5 +1,5 @@
 const PLAYER = "player";
-let club = new ProductManage("Nam Dinh");
+let club = new PlayerManager("Nam Dinh");
 club.data = loadData();
 club.init();
 display(club.getHtml());

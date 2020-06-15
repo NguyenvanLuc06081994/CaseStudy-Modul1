@@ -1,4 +1,4 @@
-class ProductManage {
+class PlayerManager {
     constructor(name) {
         this.name = name;
         this.players = [];
@@ -50,5 +50,12 @@ class ProductManage {
 
     getProductByIndex(index) {
         return this.players[index];
+    }
+    getHTmlUser(){
+        let screen = "";
+        for (let i = 0; i <this.players.length ; i++) {
+            screen += "<div class='col-md-3 text-center'>"+ this.players[i].getHtmlView() + '</div>';
+        }
+        return screen;
     }
 }
