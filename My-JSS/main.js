@@ -53,3 +53,7 @@ function editPlayer() {
     document.getElementById('form-edit').reset();
     document.getElementById('form-edit').style.display = "none";
 }
+function del(index) {
+    club.deletePlayer(index);
+    display(club.getHtml());
+}
