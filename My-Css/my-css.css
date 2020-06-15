@@ -1,0 +1,27 @@
+form {
+    width: 400px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+img {
+    width: 50px;
+}
+
+td:first-child {
+    padding: 5px !important;
+}
+
+table, td, th, tr {
+    text-align: center !important;
+    border: 1px solid black;
+}
+
+td {
+    font-size: 15px;
+    vertical-align: middle !important;
+}
