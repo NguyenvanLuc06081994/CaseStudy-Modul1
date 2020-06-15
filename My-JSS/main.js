@@ -54,8 +54,13 @@ function editPlayer() {
     let position = document.getElementById("edit-position").value;
     let country = document.getElementById("edit-country").value;
     let img = document.getElementById("edit-img").value;
-    club.players[currentPlayer].edit(img, name, age, position, country, price);
-    display(club.getHtml());
+    if (name === '' || age === '' || img === '' || position === '' || country === '' || price === '') {
+        alert("Please! Fill Full Information.");
+    } else {
+        club.players[currentPlayer].edit(img, name, age, position, country, price);
+        display(club.getHtml());
+    }
+
     document.getElementById('form-edit').reset();
     document.getElementById('form-edit').style.display = "none";
 }
