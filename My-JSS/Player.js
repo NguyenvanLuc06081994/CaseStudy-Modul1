@@ -64,4 +64,14 @@ class Player {
         this.country = country;
         this.price = price;
     }
+
+    getHtml() {
+        let html = `<td><img src="${this.img}"></td>
+                    <td>${this.name}</td>
+                    <td>${this.age}</td>
+                    <td>${this.position}</td>
+                    <td>${this.country}</td>
+                    <td>${this.price}</td>`;
+        return html;
+    }
 }
