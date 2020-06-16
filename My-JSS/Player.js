@@ -76,13 +76,13 @@ class Player {
     }
 
     getHtmlView() {
-        let html = `<div>
-                      <<img src="${this.img}" alt="">
-                      <div>
-                        <p>${this.name}</p>
-                        <p>${this.age}</p>
+        let html = `
+                      <img src="${this.img}" alt="">
+                      <div id="display">
+                        <p id="p1">Name: ${this.name}</p>
+                        <p id="id2">Age: ${this.age}</p>
                       </div>
-                  </div>`;
+                  `;
         return html;
     }
 }
