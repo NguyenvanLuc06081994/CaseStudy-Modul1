@@ -80,7 +80,10 @@ class Player {
                       <img src="${this.img}" alt="">
                       <div id="display">
                         <p id="p1">Name: ${this.name}</p>
-                        <p id="id2">Age: ${this.age}</p>
+                        <p id="p2">Age: ${this.age}</p>
+                        <p id="p2">Position: ${this.position}</p>
+                        <p id="p2">Country: ${this.country}</p>
+                        <p id="p2">Transfer Price: ${this.price}</p>
                       </div>
                   `;
         return html;
